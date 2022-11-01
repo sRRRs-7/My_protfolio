@@ -19,9 +19,8 @@ function Blog() {
         </div>
         <div className='grid grid-cols-2 grid-flow-row mr-64 ml-20 px-64'>
           {blogs.blog.map((b) => (
-            <div className='m-10'>
+            <div className='m-10' key={b.id}>
               <div
-                id={b.id}
                 className='space-y-3 border rounded-3xl shadow-2xl p-10 hover:bg-blue-100 cursor-pointer'
                 onClick={() => event_handler(b.id)}
               >

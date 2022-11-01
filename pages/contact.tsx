@@ -25,7 +25,7 @@ function contact() {
               <div className='flex justify-center'>
                 <img src='profile2.jpg' alt='profile' width={300} className='rounded-l-3xl' />
                 <div className='flex flex-col md:flex-row md:max-w-3xl rounded-r-3xl bg-white shadow-2xl'>
-                  <div className='p-6 flex flex-col justify-start'>
+                  <div className='p-12 flex flex-col justify-start'>
                     <h5 className='flex justify-center text-gray-900 text-2xl font-serif'>
                       佐藤 亮介
                     </h5>
@@ -41,7 +41,7 @@ function contact() {
                     <p className='text-gray-700 text-base mb-4 font-serif'>
                       -work : freelance engineer
                     </p>
-                    <div className='flex ml-auto p-2 mt-8 space-x-5'>
+                    <div className='flex ml-auto p-2 mt-10 space-x-5'>
                       <p>
                         <Link href='https://www.youtube.com/channel/UC-F1geS98nNWsD2z3aj7XAw'>
                           <a>
