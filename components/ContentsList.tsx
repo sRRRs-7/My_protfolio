@@ -6,7 +6,7 @@ function ContentsList() {
       <div className=''>
         {/* category */}
         <div className='font-mono text-2xl space-y-5'>
-          <h1 className='text-3xl underline text-orange-500'>Category</h1>
+          <h1 className='text-3xl underline text-blue-400'>Category</h1>
           <div className='hover:text-blue-400'>
             <a href='/qualification'>Qualification</a>
           </div>
@@ -63,7 +63,7 @@ function ContentsList() {
 
           {/* recently */}
           <div className='text-2xl font-mono space-y-5'>
-            <h1 className='underline text-3xl text-orange-500 mt-10'>Recently Post</h1>
+            <h1 className='underline text-3xl text-blue-400 mt-32'>Recently Post</h1>
             <div>
               <a href='/a' className='hover:text-blue-400'>
                 a

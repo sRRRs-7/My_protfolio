@@ -43,6 +43,7 @@ function portfolio() {
             </div>
           ))}
         </div>
+        <Footer />
       </div>
     </>
   );
