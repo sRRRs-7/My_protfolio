@@ -32,14 +32,14 @@ function Blog() {
   return (
     <>
       <div>
-        <div className='absolute right-0 mr-56 mt-12'>
+        <div className='absolute right-0 mr-48 mt-12'>
           <ContentsList />
         </div>
         <div className='grid grid-cols-2 grid-flow-row mr-64 ml-20 px-64'>
           {blogs.blog.map((b) => (
             <div className='m-10 opacity-50 hover:opacity-100 bg-yellow-100 rounded-3xl' key={b.id}>
               <div
-                className='space-y-3 border rounded-3xl shadow-2xl p-10 cursor-pointer'
+                className='space-y-3 border rounded-3xl shadow-2xl p-10 cursor-pointer object-contain w-auto h-64'
                 onClick={() => event_handler(b.id)}
               >
                 <h1 className='text-2xl font-mono text-center'>{b.title}</h1>

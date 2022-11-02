@@ -34,7 +34,7 @@ function ContentsList() {
     <>
       <div className=''>
         {/* category */}
-        <div className='font-mono text-2xl space-y-5'>
+        <div className='font-mono text-2xl space-y-8'>
           <h1 className='text-3xl underline text-blue-400'>Category</h1>
           <div className='hover:text-blue-400'>
             <a href='/category/qualification'>Qualification</a>
@@ -91,8 +91,8 @@ function ContentsList() {
           </div>
 
           {/* recently */}
-          <div className='text-2xl font-mono space-y-5'>
-            <h1 className='underline text-3xl text-blue-400 mt-32'>Recently Post</h1>
+          <div className='text-2xl font-mono space-y-8'>
+            <h1 className='underline text-3xl text-blue-400 mt-32'>Recommend Topic</h1>
             <div>
               <a
                 className='hover:text-blue-400 cursor-pointer'
@@ -100,7 +100,7 @@ function ContentsList() {
                   event_handler('1');
                 }}
               >
-                blog1
+                Rust algorithm
               </a>
             </div>
             <div>
@@ -110,7 +110,7 @@ function ContentsList() {
                   event_handler('2');
                 }}
               >
-                blog2
+                Application Engineer
               </a>
             </div>
             <div>
@@ -120,7 +120,7 @@ function ContentsList() {
                   event_handler('3');
                 }}
               >
-                blog3
+                Algorithm
               </a>
             </div>
             <div>
@@ -130,7 +130,7 @@ function ContentsList() {
                   event_handler('4');
                 }}
               >
-                blog4
+                Linux
               </a>
             </div>
             <div>
@@ -140,7 +140,7 @@ function ContentsList() {
                   event_handler('5');
                 }}
               >
-                blog5
+                AWS
               </a>
             </div>
           </div>
