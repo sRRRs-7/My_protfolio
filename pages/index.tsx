@@ -45,7 +45,7 @@ const three = () => {
             <div className='p-5 bg-orange-100 h-full'>
               <div className='flex justify-center'>
                 <div className='flex flex-col md:flex-row md:max-w-3xl rounded-3xl bg-white shadow-2xl'>
-                  <div className='p-6 flex flex-col justify-start'>
+                  <div className='p-6 flex flex-col justify-start bg-yellow-100 rounded-3xl'>
                     <h5 className='flex justify-center text-gray-900 text-2xl font-serif'>
                       佐藤 亮介
                     </h5>
@@ -120,7 +120,7 @@ const three = () => {
       <div className='bg-orange-100'>
         {inView && (
           <div className='p-10 px-64'>
-            <div className='mx-64 p-10 rounded-3xl shadow-2xl bg-white'>
+            <div className='mx-64 p-10 rounded-3xl shadow-2xl bg-yellow-100'>
               <h1>2021年-2023年</h1>
               <h3>プログラミングスキル習得, 資格取得</h3>
               <br />
@@ -170,7 +170,7 @@ const three = () => {
 
         {inView && (
           <div className='p-10 px-64'>
-            <div className='mx-64 p-10 rounded-3xl shadow-2xl bg-white'>
+            <div className='mx-64 p-10 rounded-3xl shadow-2xl bg-yellow-100'>
               <h1>2019年-2021年</h1>
               <h3>
                 サッポロホールディングス　ポッカサッポロフード&ビバレッジ株式会社 千葉支店 法人営業
@@ -198,7 +198,7 @@ const three = () => {
 
         {inView && (
           <div className='p-10 px-64'>
-            <div className='mx-64 p-10 rounded-3xl shadow-2xl bg-white'>
+            <div className='mx-64 p-10 rounded-3xl shadow-2xl bg-yellow-100'>
               <h1>2019年</h1>
               <h3>同志社大学 商学部 商学科 卒業</h3>
               <br />

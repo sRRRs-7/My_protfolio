@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { FooterState } from '../atom/recoil';
+import { BlogState, FooterState } from '../atom/recoil';
 
 function Footer() {
   const [title, setTitle] = useRecoilState(FooterState);
+  const [blog, setBlog] = useRecoilState(BlogState);
 
   useEffect(() => {
     let url = window.location.pathname;
     if (url === '/') {
-      return setTitle('profile');
+      setTitle('profile');
+    } else if (url.includes('blog/')) {
+      setTitle(url.replace(url, blog?.title));
+    } else if (url.includes('category/')) {
+      setTitle(url.replace('/category/', ''));
     } else {
       setTitle(url.replace('/', ''));
     }

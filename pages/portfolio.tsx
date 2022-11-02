@@ -27,7 +27,7 @@ function portfolio() {
         <div className='grid grid-cols-2 grid-flow-row mx-64 px-32 mt-16'>
           {portfolios.portfolio.map((b) => (
             <div className='mx-10 my-16' key={b.id} onClick={() => clickHandler(b.link)}>
-              <div className='space-y-3 border rounded-3xl shadow-2xl hover:bg-blue-100 cursor-pointer opacity-50 hover:opacity-100'>
+              <div className='space-y-3 border rounded-3xl shadow-2xl cursor-pointer opacity-50 hover:opacity-100 bg-yellow-100'>
                 <img
                   src='profile2.jpg'
                   alt='portfolio'
