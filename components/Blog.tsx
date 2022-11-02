@@ -31,24 +31,24 @@ function Blog() {
 
   return (
     <>
-      <div>
-        <div className='absolute right-0 mr-48 mt-12'>
-          <ContentsList />
-        </div>
-        <div className='grid grid-cols-2 grid-flow-row mr-64 ml-20 px-64'>
+      <div className='lg:flex'>
+        <div className='grid lg:grid-cols-2 grid-flow-row lg:ml-64 p-10 space-y-5'>
           {blogs.blog.map((b) => (
-            <div className='m-10 opacity-50 hover:opacity-100 bg-yellow-100 rounded-3xl' key={b.id}>
+            <div className='m-4 opacity-50 hover:opacity-100 bg-yellow-100 rounded-3xl' key={b.id}>
               <div
                 className='space-y-3 border rounded-3xl shadow-2xl p-10 cursor-pointer object-contain w-auto h-64'
                 onClick={() => event_handler(b.id)}
               >
-                <h1 className='text-2xl font-mono text-center'>{b.title}</h1>
-                <h1 className='text-xl font-mono'>{b.image}</h1>
-                <h1 className='text-lg font-mono'>{b.contents}</h1>
-                <h1 className='text-lg font-mono'>{b.timestamp}</h1>
+                <h1 className='text-xl font-mono text-center '>{b.title}</h1>
+                <h1 className='text-lg font-mono'>{b.image}</h1>
+                <h1 className='text-md font-mono'>{b.contents}</h1>
+                <h1 className='text-md font-mono'>{b.timestamp}</h1>
               </div>
             </div>
           ))}
+        </div>
+        <div className='lg:flex right-0 lg:text-left lg:pt-20 md:text-center md:p-5 sm:text-center sm:p-5 '>
+          <ContentsList />
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -10,11 +10,12 @@ import Footer from '../components/Footer';
 
 import { useInView } from 'react-intersection-observer';
 
-const three = () => {
-  const { ref, inView } = useInView({
-    rootMargin: '-360px', // ref要素が現れてから50px過ぎたら
-    triggerOnce: true, // 最初の一度だけ実行
-  });
+const blog = () => {
+  const [inView, setInView] = useState(false);
+
+  const clickHandler = () => {
+    setInView(true);
+  };
 
   return (
     <>
@@ -25,18 +26,39 @@ const three = () => {
       <div className='relative'>
         <img src='/profile.png' alt='profile' className='flex h-80 w-80 mx-auto' />
         <div>
-          <p className='absolute top-0 left-0 text-yellow-200 text-6xl font-mono ml-20 mt-32 animate-bounce'>
+          <p className='absolute top-0 left-0 text-yellow-200 lg:text-6xl font-mono lg:ml-20 lg:mt-32 animate-bounce md:text-4xl md:ml-16 md:mt-16 sm:ml-16 sm:mt-16'>
             No code
           </p>
-          <p className='absolute bottom-0 left-0 text-orange-500 text-6xl font-mono ml-64 mb-48 animate-bounce'>
+          <p className='absolute bottom-0 left-0 text-orange-500 lg:text-6xl font-mono lg:ml-64 lg:mb-20 animate-bounce md:text-4xl md:ml-32 md:mb-16 sm:ml-32 sm:mb-16'>
             No life
           </p>
         </div>
       </div>
 
+      <div className='flex text-center bg-orange-100 pt-10'>
+        {!inView && (
+          <p
+            className='text-6xl flex mx-auto animate-ping cursor-pointer text-orange-400'
+            onClick={() => {
+              clickHandler();
+            }}
+          >
+            ⌬
+          </p>
+        )}
+      </div>
+
+      <div className='flex text-center bg-orange-100 pt-10'>
+        {!inView && (
+          <p className='flex text-center bg-orange-100 mx-auto pb-5 animate-pulse text-xl rounded-full'>
+            click!!
+          </p>
+        )}
+      </div>
+
       {/* profile */}
       <div className='text-5xl font-mono flex text-center bg-orange-100 pt-10'>
-        <h1 className='flex m-auto'>Profile</h1>
+        {inView && <h1 className='flex m-auto'>Profile</h1>}
       </div>
 
       {inView && (
@@ -107,55 +129,59 @@ const three = () => {
       )}
 
       {/* background */}
+
       <div className='text-5xl font-mono flex text-center bg-orange-100 pt-10'>
-        <h1 className='flex m-auto'>Background</h1>
+        {inView && <h1 className='flex m-auto'>Background</h1>}
       </div>
       <div className='text-xl font-mono flex text-center bg-orange-100 pt-10'>
-        <h1 className='flex m-auto'>To Be Continue</h1>
+        {inView && <h1 className='flex m-auto'>To Be Continue</h1>}
       </div>
 
-      <div className='flex bg-orange-100 pt-3' ref={ref}>
-        <p className='text-5xl flex m-auto animate-bounce'>⇣</p>
+      <div className='flex bg-orange-100'>
+        {inView && <p className='text-5xl flex mx-auto animate-bounce'>⇣</p>}
       </div>
-      <div className='bg-orange-100'>
+
+      <div className='bg-orange-100 w-full'>
         {inView && (
-          <div className='p-10 px-64'>
-            <div className='mx-64 p-10 rounded-3xl shadow-2xl bg-yellow-100'>
-              <h1>2021年-2023年</h1>
-              <h3>プログラミングスキル習得, 資格取得</h3>
-              <br />
-              <h1 className='text-md'>スキル</h1>
+          <div className='p-10 flex justify-center md:px-0'>
+            <div className='p-10 rounded-3xl shadow-2xl text-center bg-yellow-100'>
+              <div>
+                <h1>2021年-2023年</h1>
+                <h3>プログラミングスキル習得, 資格取得</h3>
 
-              <div className='ml-5 text-md'>
-                <div>
-                  <h4 className='text-md'>- Language</h4>
-                  <p className='ml-10'> Rust | Go | Javascript | Typescript | Python</p>
+                <div className='text-md p-3 space-y-5'>
+                  <div>
+                    <h1 className='text-md'>スキル</h1>
+                  </div>
+                  <div>
+                    <h4 className='text-xl'>- Language -</h4>
+                    <p> Rust | Go | Javascript | Typescript | Python</p>
+                  </div>
+                  <div>
+                    <h4 className='text-xl'>- Framework -</h4>
+                    <p>React | Next.js | Axum | Gin-gonic | Django</p>
+                  </div>
+                  <div>
+                    <h4 className='text-xl'>- RDB/NoSQL -</h4>
+                    <p>Postgres | Redis</p>
+                  </div>
+                  <div>
+                    <h4 className='text-xl'>- Cloud -</h4>
+                    <p>AWS (EC2 | ECS) | GCP (Firebase)</p>
+                  </div>
+                  <div>
+                    <h4 className='text-xl'>- その他 -</h4>
+                    <p>Github | Docker | Terraform </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className='text-md'>- Framework</h4>
-                  <p className='ml-10'>React | Next.js | Axum | Gin-gonic | Django</p>
-                </div>
-                <div>
-                  <h4 className='text-md'>- RDB/NoSQL</h4>
-                  <p className='ml-10'>Postgres | Redis</p>
-                </div>
-                <div>
-                  <h4 className='text-md'>- Cloud</h4>
-                  <p className='ml-10'>AWS (EC2 | ECS) | GCP (Firebase)</p>
-                </div>
-                <div>
-                  <h4 className='text-md'>- その他</h4>
-                  <p className='ml-10'>Github | Docker | Terraform </p>
-                </div>
-              </div>
-              <br />
-              <h1 className='text-md'>資格</h1>
 
-              <div className='ml-5'>
                 <div>
-                  <h4 className='text-md'>- 応用技術者</h4>
-                  <h4 className='text-md'>- LPIC</h4>
-                  <h4 className='text-md'>- AWS</h4>
+                  <div className='space-y-3'>
+                    <h1 className='text-xl'>- 資格 -</h1>
+                    <h4 className='text-md'>応用技術者</h4>
+                    <h4 className='text-md'>LPIC</h4>
+                    <h4 className='text-md'>AWS</h4>
+                  </div>
                 </div>
               </div>
             </div>
@@ -169,23 +195,20 @@ const three = () => {
         )}
 
         {inView && (
-          <div className='p-10 px-64'>
-            <div className='mx-64 p-10 rounded-3xl shadow-2xl bg-yellow-100'>
+          <div className='p-10 flex justify-center md:px-0'>
+            <div className='p-10 rounded-3xl shadow-2xl text-center bg-yellow-100'>
               <h1>2019年-2021年</h1>
-              <h3>
-                サッポロホールディングス　ポッカサッポロフード&ビバレッジ株式会社 千葉支店 法人営業
-              </h3>
+              <h3>サッポロホールディングス</h3>
+              <h3>ポッカサッポロフード&ビバレッジ株式会社</h3>
+              <h3>千葉支店 法人営業</h3>
               <br />
-              <p>
-                - 食品卸大手, 某ドラッグチェーン ローカルスーパーマーケット <br />
-                - メイン商材　PJT リーダー
-                <br />
-                &nbsp; &nbsp; 毎月のKPI, KGI設定, 利益率管理
-                <br />
-                &nbsp; &nbsp; 統計分析(バスケット分析, ABC分析)による販売戦略の立案
-                <br />
-                &nbsp; &nbsp; VBAでの共通データ分析フォーマットの作成
-              </p>
+              <div>
+                <p>食品卸大手, 某ドラッグチェーン ローカルスーパーマーケット</p>
+                <p>- メイン商材　PJT リーダー</p>
+                <p> &nbsp; &nbsp; 毎月のKPI, KGI設定, 利益率管理</p>
+                <p> &nbsp; &nbsp; 統計分析(バスケット分析, ABC分析)による販売戦略の立案</p>
+                <p> &nbsp; &nbsp; VBAでの共通データ分析フォーマットの作成</p>
+              </div>
             </div>
           </div>
         )}
@@ -197,8 +220,8 @@ const three = () => {
         )}
 
         {inView && (
-          <div className='p-10 px-64'>
-            <div className='mx-64 p-10 rounded-3xl shadow-2xl bg-yellow-100'>
+          <div className='p-10 flex justify-center md:px-0'>
+            <div className='p-10 rounded-3xl shadow-2xl text-center bg-yellow-100'>
               <h1>2019年</h1>
               <h3>同志社大学 商学部 商学科 卒業</h3>
               <br />
@@ -219,4 +242,4 @@ const three = () => {
   );
 };
 
-export default three;
+export default blog;
