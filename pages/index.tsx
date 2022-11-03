@@ -8,8 +8,6 @@ import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import { useInView } from 'react-intersection-observer';
-
 const blog = () => {
   const [inView, setInView] = useState(false);
 
