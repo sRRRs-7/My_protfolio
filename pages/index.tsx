@@ -48,8 +48,8 @@ const blog = () => {
 
       <div className='flex text-center bg-orange-100 pt-10'>
         {!inView && (
-          <p className='flex text-center bg-orange-100 mx-auto pb-5 animate-pulse text-xl rounded-full'>
-            click!!
+          <p className='flex text-center bg-orange-100 mx-auto pb-5 animate-pulse text-xl rounded-full font-mono'>
+            OPEN!!
           </p>
         )}
       </div>
@@ -233,7 +233,7 @@ const blog = () => {
         )}
       </div>
 
-      <div>
+      <div className='bottom-0'>
         <Footer />
       </div>
     </>
